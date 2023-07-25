@@ -22,9 +22,11 @@ plugins:
       kind: password
     - name: start_date
     - name: since_id
+    - name: max_fetch_interval
     config:
-      start_date: '2023-04-19T09:21:28.144Z'
+      start_date: '2023-04-19T09:21:28.144+00:00'
       since_id: 0
+      max_fetch_interval: 24 # hours
     select:
     - transactions.*
     - customers.*

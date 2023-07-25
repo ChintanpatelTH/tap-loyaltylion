@@ -2,9 +2,12 @@
 
 from __future__ import annotations
 
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 from urllib.parse import parse_qsl, urlsplit
+
+from dateutil import parser
 
 from tap_loyaltylion.client import LoyaltyLionStream
 
@@ -19,7 +22,10 @@ class CustomersStream(LoyaltyLionStream):  # noqa: D101
     replication_method = "INCREMENTAL"
     records_jsonpath = "$.customers[*]"
     schema_filepath = SCHEMAS_DIR / "customers.json"
-    is_sorted = False
+    is_sorted = True
+    check_sorted = False # Skip checking sorting data
+    start_date: str | None = None
+    end_date: str | None = None
 
     def get_url_params(
         self,
@@ -39,16 +45,42 @@ class CustomersStream(LoyaltyLionStream):  # noqa: D101
         if next_page_token:
             return dict(parse_qsl(urlsplit(next_page_token).query))
 
-        # Get replication date from state
-        context_state = self.get_context_state(context)
-        last_updated = context_state.get("replication_key_value")
-
-        config_start_date = self.config.get("start_date")
-        start_date = last_updated if last_updated else config_start_date
-        params["updated_at_min"] = start_date
+        params["updated_at_min"] = self.start_date
+        params["updated_at_max"] = self.end_date
         params["limit"] = 500
         self.logger.info(params)
         return params
+
+    def get_records(self, context: dict) -> Iterable[dict[str, Any]]:
+        """Return a generator of row-type dictionary objects.
+
+        Args:
+            context: The stream context.
+
+        Yields:
+            Each record from the source.
+        """
+        current_state = self.get_context_state(context)
+        current_date = datetime.now(timezone.utc)
+        date_window_size = float(self.config.get("max_fetch_interval", 1))
+        min_value = current_state.get(
+            "replication_key_value",
+            self.config.get("start_date", ""),
+        )
+        context = context or {}
+        min_date = parser.parse(min_value)
+        while min_date < current_date:
+            updated_at_max = min_date + timedelta(hours=date_window_size)
+            if updated_at_max > current_date:
+                updated_at_max = current_date
+
+            self.start_date = min_date.isoformat()
+            self.end_date = updated_at_max.isoformat()
+            yield from super().get_records(context)
+            # Send state message
+            self._increment_stream_state({"updated_at": self.end_date}, context=context)
+            self._write_state_message()
+            min_date = updated_at_max
 
 
 class TransactionsStream(LoyaltyLionStream):  # noqa: D101
@@ -89,4 +121,3 @@ class TransactionsStream(LoyaltyLionStream):  # noqa: D101
         params["limit"] = 500
         self.logger.info(params)
         return params
-

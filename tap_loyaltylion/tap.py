@@ -36,7 +36,12 @@ class TapLoyaltyLion(Tap):
         th.Property(
             "since_id",
             th.IntegerType,
-            description="Initial ID of the record to sync. Specifically for transactions"
+            description="Initial ID of the record to sync. Specifically for transactions",
+        ),
+        th.Property(
+            "max_fetch_interval",
+            th.IntegerType,
+            description="Max number of hours of data to fetch in one run. Applies to customers stream only",
         ),
         th.Property(
             "api_url",

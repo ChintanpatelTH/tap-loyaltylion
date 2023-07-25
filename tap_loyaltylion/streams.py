@@ -26,6 +26,7 @@ class CustomersStream(LoyaltyLionStream):  # noqa: D101
     check_sorted = False # Skip checking sorting data
     start_date: str | None = None
     end_date: str | None = None
+    STATE_MSG_FREQUENCY = 0 # Disable write state message from within SDK
 
     def get_url_params(
         self,

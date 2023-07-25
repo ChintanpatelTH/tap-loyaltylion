@@ -3,25 +3,25 @@
     "type": "object",
     "properties": {
         "id": {
-            "type": "integer"
+            "type": ["integer","null"]
         },
         "merchant_id": {
-            "type": "string"
+            "type": ["string","null"]
         },
         "email": {
             "type": ["string","null"]
         },
         "points_approved": {
-            "type": "integer"
+            "type": ["integer","null"]
         },
         "points_pending": {
-            "type": "integer"
+            "type": ["integer","null"]
         },
         "points_spent": {
-            "type": "integer"
+            "type": ["integer","null"]
         },
         "rewards_claimed": {
-            "type": "integer"
+            "type": ["integer","null"]
         },
         "properties": {
             "type": "object",
@@ -52,13 +52,13 @@
             "type": ["string","null"]
         },
         "blocked": {
-            "type": "boolean"
+            "type": ["boolean","null"]
         },
         "guest": {
-            "type": "boolean"
+            "type": ["boolean","null"]
         },
         "enrolled": {
-            "type": "boolean"
+            "type": ["boolean","null"]
         },
         "enrolled_at": {
             "type": ["string","null"]
@@ -73,40 +73,40 @@
             "type": ["object","null"],
             "properties": {
                 "started_at": {
-                    "type": "string"
+                    "type": ["string","null"]
                 },
                 "expires_at": {
-                    "type": "null"
+                    "type": ["string","null"]
                 },
                 "manual": {
-                    "type": "boolean"
+                    "type": ["boolean","null"]
                 },
                 "loyalty_tier": {
-                    "type": "object",
+                    "type": ["object","null"],
                     "properties": {
                         "id": {
-                            "type": "integer"
+                            "type": ["integer","null"]
                         },
                         "name": {
-                            "type": "string"
+                            "type": ["string","null"]
                         },
                         "number": {
-                            "type": "integer"
+                            "type": ["integer","null"]
                         },
                         "default": {
-                            "type": "boolean"
+                            "type": ["boolean","null"]
                         },
                         "hidden": {
-                            "type": "boolean"
+                            "type": ["boolean","null"]
                         },
                         "lower_bound": {
-                            "type": "string"
+                            "type": ["string","null"]
                         },
                         "upper_bound": {
-                            "type": "string"
+                            "type": ["string","null"]
                         },
                         "position": {
-                            "type": "integer"
+                            "type": ["integer","null"]
                         }
                     },
                     "required": [
@@ -132,13 +132,13 @@
             "type": ["string","null"]
         },
         "referral_url": {
-            "type": "string"
+            "type": ["string","null"]
         },
         "created_at": {
-            "type": "string"
+            "type": ["string","null"]
         },
         "updated_at": {
-            "type": "string"
+            "type": ["string","null"]
         }
     },
     "required": [

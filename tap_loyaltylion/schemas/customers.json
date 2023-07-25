@@ -1,0 +1,166 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "merchant_id": {
+            "type": "string"
+        },
+        "email": {
+            "type": ["string","null"]
+        },
+        "points_approved": {
+            "type": "integer"
+        },
+        "points_pending": {
+            "type": "integer"
+        },
+        "points_spent": {
+            "type": "integer"
+        },
+        "rewards_claimed": {
+            "type": "integer"
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": ["string","null"]
+                },
+                "last_name": {
+                    "type": ["string","null"]
+                },
+                "first_name": {
+                    "type": ["string","null"]
+                },
+                "rechargeHash": {
+                    "type": ["string","null"]
+                }
+            }
+        },
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "shopify_source_url": {
+                    "type": ["string","null"]
+                }
+            }
+        },
+        "birthday": {
+            "type": ["string","null"]
+        },
+        "blocked": {
+            "type": "boolean"
+        },
+        "guest": {
+            "type": "boolean"
+        },
+        "enrolled": {
+            "type": "boolean"
+        },
+        "enrolled_at": {
+            "type": ["string","null"]
+        },
+        "referral_id": {
+            "type": ["string","null"]
+        },
+        "referred_by": {
+            "type": ["string","null"]
+        },
+        "loyalty_tier_membership": {
+            "type": ["object","null"],
+            "properties": {
+                "started_at": {
+                    "type": "string"
+                },
+                "expires_at": {
+                    "type": "null"
+                },
+                "manual": {
+                    "type": "boolean"
+                },
+                "loyalty_tier": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "number": {
+                            "type": "integer"
+                        },
+                        "default": {
+                            "type": "boolean"
+                        },
+                        "hidden": {
+                            "type": "boolean"
+                        },
+                        "lower_bound": {
+                            "type": "string"
+                        },
+                        "upper_bound": {
+                            "type": "string"
+                        },
+                        "position": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "default",
+                        "hidden",
+                        "id",
+                        "lower_bound",
+                        "name",
+                        "number",
+                        "position",
+                        "upper_bound"
+                    ]
+                }
+            },
+            "required": [
+                "expires_at",
+                "loyalty_tier",
+                "manual",
+                "started_at"
+            ]
+        },
+        "insights_segment": {
+            "type": ["string","null"]
+        },
+        "referral_url": {
+            "type": "string"
+        },
+        "created_at": {
+            "type": "string"
+        },
+        "updated_at": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "birthday",
+        "blocked",
+        "created_at",
+        "email",
+        "enrolled",
+        "guest",
+        "id",
+        "insights_segment",
+        "loyalty_tier_membership",
+        "merchant_id",
+        "metadata",
+        "points_approved",
+        "points_pending",
+        "points_spent",
+        "properties",
+        "referral_id",
+        "referral_url",
+        "referred_by",
+        "rewards_claimed",
+        "updated_at"
+    ]
+}

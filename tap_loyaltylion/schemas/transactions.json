@@ -1,0 +1,418 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": ["null","object"],
+    "properties": {
+        "id": {
+            "type": ["null","integer"]
+        },
+        "created_at": {
+            "type": ["null","string"]
+        },
+        "customer": {
+            "type": ["null","object"],
+            "properties": {
+                "id": {
+                    "type": ["null","integer"]
+                },
+                "email": {
+                    "type": ["null","string"]
+                },
+                "merchant_id": {
+                    "type": ["null","string"]
+                },
+                "points_approved": {
+                    "type": ["null","integer"]
+                },
+                "points_pending": {
+                    "type": ["null","integer"]
+                },
+                "points_spent": {
+                    "type": ["null","integer"]
+                }
+            },
+            "required": [
+                "email",
+                "id",
+                "merchant_id",
+                "points_approved",
+                "points_pending",
+                "points_spent"
+            ]
+        },
+        "points_approved": {
+            "type": ["null","integer"]
+        },
+        "points_pending": {
+            "type": ["null","integer"]
+        },
+        "resource": {
+            "type": ["null","string"]
+        },
+        "claimed_reward": {
+            "type": ["object","null"],
+            "properties": {
+                "id": {
+                    "type": ["null","integer"]
+                },
+                "claimed_at": {
+                    "type": ["null","string"]
+                },
+                "point_cost": {
+                    "type": ["null","integer"]
+                },
+                "state": {
+                    "type": ["null","string"]
+                },
+                "session": {
+                    "type": ["null","object"],
+                    "properties": {
+                        "kind": {
+                            "type": ["null","string"]
+                        },
+                        "token": {
+                            "type": ["null","string"]
+                        }
+                    }
+                },
+                "reward": {
+                    "type": ["null","object"],
+                    "properties": {
+                        "id": {
+                            "type": ["null","integer"]
+                        },
+                        "title": {
+                            "type": ["null","string"]
+                        },
+                        "description": {
+                            "type": ["string","null"]
+                        },
+                        "site_id": {
+                            "type": ["null","integer"]
+                        },
+                        "target_site": {
+                            "type": ["null","object"],
+                            "properties": {
+                                "id": {
+                                    "type": ["null","integer"]
+                                },
+                                "name": {
+                                    "type": ["null","string"]
+                                },
+                                "url": {
+                                    "type": ["null","string"]
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "name",
+                                "url"
+                            ]
+                        },
+                        "sort_key": {
+                            "type": ["null","integer"]
+                        },
+                        "content": {
+                            "type": ["null","object"]
+                        },
+                        "kind": {
+                            "type": ["null","string"]
+                        },
+                        "point_cost": {
+                            "type": ["null","integer"]
+                        },
+                        "method": {
+                            "type": ["null","string"]
+                        },
+                        "discount_type": {
+                            "type": ["null","string"]
+                        },
+                        "discount_amount": {
+                            "type": ["null","integer"]
+                        },
+                        "minimum_spend": {
+                            "type": ["null","integer"]
+                        },
+                        "max_free_shipping": {
+                            "type": ["null","string"]
+                        },
+                        "min_redemption_amount": {
+                            "type": ["null","integer"]
+                        },
+                        "max_redemption_amount": {
+                            "type": ["null","integer"]
+                        },
+                        "order_type": {
+                            "type": ["null","string"]
+                        },
+                        "usage_limit": {
+                            "type": ["null","integer"]
+                        },
+                        "target_type": {
+                            "type": ["null","string"]
+                        },
+                        "target_products": {
+                            "type": ["null","array"],
+                            "items": {
+                                "type": ["null","object"],
+                                "properties": {
+                                    "id": {
+                                        "type": ["null","integer"]
+                                    },
+                                    "sku": {
+                                        "type": ["null","string"]
+                                    },
+                                    "variant_id": {
+                                        "type": ["null","integer"]
+                                    },
+                                    "url": {
+                                        "type": ["null","string"]
+                                    },
+                                    "image_url": {
+                                        "type": ["null","string"]
+                                    },
+                                    "sort_key": {
+                                        "type": ["null","integer"]
+                                    },
+                                    "title": {
+                                        "type": ["null","string"]
+                                    }
+                                }
+                            }
+                        },
+                        "target_collections": {
+                            "type": ["null","array"]
+                        },
+                        "session_options": {
+                            "type": ["null","object"],
+                            "properties": {
+                                "kind": {
+                                    "type": ["null","string"]
+                                },
+                                "session_limit": {
+                                    "type": ["null","integer"]
+                                }
+                            },
+                            "required": [
+                                "kind",
+                                "session_limit"
+                            ]
+                        },
+                        "expiry_options": {
+                            "type": ["null","object"],
+                            "properties": {
+                                "kind": {
+                                    "type": ["null","string"]
+                                },
+                                "seconds": {
+                                    "type": ["null","integer"]
+                                }
+                            },
+                            "required": [
+                                "kind",
+                                "seconds"
+                            ]
+                        }
+                    }
+                },
+                "redeemable": {
+                    "type": ["null","object"],
+                    "properties": {
+                        "redeemable_type": {
+                            "type": ["null","string"]
+                        },
+                        "product": {
+                            "type": ["null","object"],
+                            "properties": {
+                                "id": {
+                                    "type": ["null","integer"]
+                                },
+                                "variant_id": {
+                                    "type": ["null","integer"]
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "variant_id"
+                            ]
+                        },
+                        "used_at": {
+                            "type": ["null","string"]
+                        },
+                        "shopify_cart_line_item_context": {
+                            "type": ["null","string"]
+                        }
+                    },
+                    "required": [
+                        "product",
+                        "redeemable_type",
+                        "shopify_cart_line_item_context",
+                        "used_at"
+                    ]
+                },
+                "expires_at": {
+                    "type": ["null","string"]
+                }
+            }
+        },
+        "activity": {
+            "type": ["null","object"],
+            "properties": {
+                "id": {
+                    "type": ["null","integer"]
+                },
+                "value": {
+                    "type": ["null","integer"]
+                },
+                "resource": {
+                    "type": ["null","string"]
+                },
+                "customer": {
+                    "type": ["null","object"],
+                    "properties": {
+                        "id": {
+                            "type": ["null","integer"]
+                        },
+                        "email": {
+                            "type": ["null","string"]
+                        },
+                        "merchant_id": {
+                            "type": ["null","string"]
+                        },
+                        "points_approved": {
+                            "type": ["null","integer"]
+                        },
+                        "points_pending": {
+                            "type": ["null","integer"]
+                        },
+                        "points_spent": {
+                            "type": ["null","integer"]
+                        }
+                    }
+                },
+                "merchant_id": {
+                    "type": ["null","string"]
+                },
+                "state": {
+                    "type": ["null","string"]
+                },
+                "rule": {
+                    "type": ["null","object"],
+                    "properties": {
+                        "id": {
+                            "type": ["null","integer"]
+                        },
+                        "name": {
+                            "type": ["null","string"]
+                        },
+                        "title": {
+                            "type": ["null","string"]
+                        }
+                    }
+                },
+                "order": {
+                    "type": ["null","object"],
+                    "properties": {
+                        "id": {
+                            "type": ["null","integer"]
+                        },
+                        "merchant_id": {
+                            "type": ["null","string"]
+                        },
+                        "merchant_number": {
+                            "type": ["null","string"]
+                        },
+                        "total": {
+                            "type": ["null","string"]
+                        },
+                        "total_tax": {
+                            "type": ["null","string"]
+                        },
+                        "total_shipping": {
+                            "type": ["null","string"]
+                        },
+                        "total_discounts": {
+                            "type": ["null","string"]
+                        },
+                        "total_paid": {
+                            "type": ["null","string"]
+                        },
+                        "total_refunded": {
+                            "type": ["null","string"]
+                        },
+                        "payment_status": {
+                            "type": ["null","string"]
+                        },
+                        "fulfillment_status": {
+                            "type": ["null","string"]
+                        },
+                        "refund_status": {
+                            "type": ["null","string"]
+                        },
+                        "cancellation_status": {
+                            "type": ["null","string"]
+                        },
+                        "metadata": {
+                            "type": ["null","object"],
+                            "properties": {
+                                "shopify_source_name": {
+                                    "type": ["null","string"]
+                                },
+                                "shopify_source_url": {
+                                    "type": ["null","string"]
+                                }
+                            }
+                        },
+                        "created_at": {
+                            "type": ["null","string"]
+                        },
+                        "updated_at": {
+                            "type": ["null","string"]
+                        },
+                        "customer": {
+                            "type": ["null","object"],
+                            "properties": {
+                                "id": {
+                                    "type": ["null","integer"]
+                                },
+                                "email": {
+                                    "type": ["null","string"]
+                                },
+                                "merchant_id": {
+                                    "type": ["null","string"]
+                                },
+                                "points_approved": {
+                                    "type": ["null","integer"]
+                                },
+                                "points_pending": {
+                                    "type": ["null","integer"]
+                                },
+                                "points_spent": {
+                                    "type": ["null","integer"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "adjustment": {
+            "type": ["null","object"],
+            "properties": {
+                "note": {
+                    "type": ["null","string"]
+                }
+            },
+            "required": [
+                "note"
+            ]
+        }
+    },
+    "required": [
+        "created_at",
+        "customer",
+        "id",
+        "points_approved",
+        "points_pending",
+        "resource"
+    ]
+}

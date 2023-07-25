@@ -15,14 +15,14 @@ class TapLoyaltyLion(Tap):
 
     config_jsonschema = th.PropertiesList(
         th.Property(
-            "ll_username",
+            "username",
             th.StringType,
             required=True,
             secret=True,  # Flag config as protected.
             description="LoyaltyLion API Username",
         ),
         th.Property(
-            "ll_password",
+            "password",
             th.StringType,
             required=True,
             secret=True,  # Flag config as protected.

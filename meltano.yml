@@ -16,9 +16,9 @@ plugins:
     - about
     - stream-maps
     settings:
-    - name: ll_username
+    - name: username
       kind: password
-    - name: ll_password
+    - name: password
       kind: password
     - name: start_date
     - name: since_id

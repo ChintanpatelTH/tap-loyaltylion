@@ -33,8 +33,8 @@ class LoyaltyLionStream(RESTStream):
         """
         return BasicAuthenticator.create_for_stream(
             self,
-            username=self.config.get("username", self.config.get("ll_username")),
-            password=self.config.get("password", self.config.get("ll_password")),
+            username=self.config.get("username"),
+            password=self.config.get("password"),
         )
 
     @property

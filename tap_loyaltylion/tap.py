@@ -41,6 +41,7 @@ class TapLoyaltyLion(Tap):
         th.Property(
             "max_fetch_interval",
             th.IntegerType,
+            default=1,
             description="Max number of hours of data to fetch in one run. Applies to customers stream only",
         ),
         th.Property(

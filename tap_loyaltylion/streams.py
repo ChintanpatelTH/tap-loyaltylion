@@ -23,10 +23,12 @@ class CustomersStream(LoyaltyLionStream):  # noqa: D101
     records_jsonpath = "$.customers[*]"
     schema_filepath = SCHEMAS_DIR / "customers.json"
     is_sorted = True
-    check_sorted = False # Skip checking sorting data
+    check_sorted = False  # Skip checking sorting data
     start_date: str | None = None
     end_date: str | None = None
-    STATE_MSG_FREQUENCY = 0 # Disable write state message from within SDK
+    STATE_MSG_FREQUENCY = (
+        1000 * 1000 * 1000
+    )  # Large value to disable write state message from within SDK
 
     def get_url_params(
         self,

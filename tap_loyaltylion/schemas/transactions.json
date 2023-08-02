@@ -29,15 +29,7 @@
                 "points_spent": {
                     "type": ["null","integer"]
                 }
-            },
-            "required": [
-                "email",
-                "id",
-                "merchant_id",
-                "points_approved",
-                "points_pending",
-                "points_spent"
-            ]
+            }
         },
         "points_approved": {
             "type": ["null","integer"]
@@ -101,12 +93,7 @@
                                 "url": {
                                     "type": ["null","string"]
                                 }
-                            },
-                            "required": [
-                                "id",
-                                "name",
-                                "url"
-                            ]
+                            }
                         },
                         "sort_key": {
                             "type": ["null","integer"]
@@ -191,11 +178,7 @@
                                 "session_limit": {
                                     "type": ["null","integer"]
                                 }
-                            },
-                            "required": [
-                                "kind",
-                                "session_limit"
-                            ]
+                            }
                         },
                         "expiry_options": {
                             "type": ["null","object"],
@@ -206,11 +189,7 @@
                                 "seconds": {
                                     "type": ["null","integer"]
                                 }
-                            },
-                            "required": [
-                                "kind",
-                                "seconds"
-                            ]
+                            }
                         }
                     }
                 },
@@ -229,11 +208,7 @@
                                 "variant_id": {
                                     "type": ["null","integer"]
                                 }
-                            },
-                            "required": [
-                                "id",
-                                "variant_id"
-                            ]
+                            }
                         },
                         "used_at": {
                             "type": ["null","string"]
@@ -241,13 +216,7 @@
                         "shopify_cart_line_item_context": {
                             "type": ["null","string"]
                         }
-                    },
-                    "required": [
-                        "product",
-                        "redeemable_type",
-                        "shopify_cart_line_item_context",
-                        "used_at"
-                    ]
+                    }
                 },
                 "expires_at": {
                     "type": ["null","string"]
@@ -401,18 +370,7 @@
                 "note": {
                     "type": ["null","string"]
                 }
-            },
-            "required": [
-                "note"
-            ]
+            }
         }
-    },
-    "required": [
-        "created_at",
-        "customer",
-        "id",
-        "points_approved",
-        "points_pending",
-        "resource"
-    ]
+    }
 }

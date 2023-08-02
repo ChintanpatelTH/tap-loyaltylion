@@ -58,7 +58,6 @@ class LoyaltyLionStream(RESTStream):
             self.last_id = None
             return None
 
-        self.logger.info(next_link["url"])
         return next_link["url"]
 
     def parse_response(self, response: requests.Response) -> Iterable[dict]:

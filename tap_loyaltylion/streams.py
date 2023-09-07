@@ -95,6 +95,7 @@ class TransactionsStream(LoyaltyLionStream):  # noqa: D101
     records_jsonpath = "$.transactions[*]"
     schema_filepath = SCHEMAS_DIR / "transactions.json"
     check_sorted = False  # Skip checking sorting data
+    is_sorted = True
 
     def get_url_params(
         self,

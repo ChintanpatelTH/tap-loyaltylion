@@ -120,7 +120,9 @@ class TransactionsStream(LoyaltyLionStream):  # noqa: D101
 
         since = self.config.get("since_id")
         since_id = last_updated if last_updated else since
-        params["since_id"] = since_id
+        # Some transactions getting skipped because the way loyaltylion
+        # adding their transactions in the system
+        params["since_id"] = int(since_id) - 500
         params["limit"] = 500
         self.logger.info(params)
         return params

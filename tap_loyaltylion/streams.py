@@ -96,6 +96,9 @@ class TransactionsStream(LoyaltyLionStream):  # noqa: D101
     schema_filepath = SCHEMAS_DIR / "transactions.json"
     check_sorted = False  # Skip checking sorting data
     is_sorted = True
+    STATE_MSG_FREQUENCY = (
+        1000 * 1000 * 1000
+    )  # Large value to disable write state message from within SDK
 
     def get_url_params(
         self,

@@ -94,7 +94,7 @@ class TransactionsStream(LoyaltyLionStream):  # noqa: D101
     replication_method = "INCREMENTAL"
     records_jsonpath = "$.transactions[*]"
     schema_filepath = SCHEMAS_DIR / "transactions.json"
-    is_sorted = True
+    check_sorted = False  # Skip checking sorting data
 
     def get_url_params(
         self,

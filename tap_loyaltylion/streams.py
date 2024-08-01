@@ -51,7 +51,6 @@ class CustomersStream(LoyaltyLionStream):  # noqa: D101
         params["updated_at_min"] = self.start_date
         params["updated_at_max"] = self.end_date
         params["limit"] = 500
-        params["sort_field"] = "updated_at"
         self.logger.info(params)
         return params
 
